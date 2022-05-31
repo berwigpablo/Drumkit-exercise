@@ -61,10 +61,11 @@
 
   function playSound(e){
 
+    const div = document.querySelector(`.key[data-key="${e.keyCode}"]`); //can also use div instead of .key
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+
     if(!audio) return;
 
-    const div = document.querySelector(`.key[data-key="${e.keyCode}"]`); //can also use div instead of .key
     div.classList.add('playing');
     window.addEventListener('keyup', () => div.classList.remove('playing'));
 
